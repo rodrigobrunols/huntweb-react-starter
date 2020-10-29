@@ -16,7 +16,8 @@ class Product extends Component{
 
         const response = await api.get(`/products/${id}`);
 
-        this.setState({products: response.data});
+        console.log(response)
+        this.setState({product: response.data});
     }
     render(){
 
@@ -25,8 +26,8 @@ class Product extends Component{
         return(
 
             <div className="product-info">
-            <h1>product.title</h1>
-            <p>product.description</p>
+            <h1>{product.title}</h1>
+            <p>{product.description}</p>
             <p>
                 URL: <a href={product.url}>{product.url}</a>
             </p>
